@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --hospital-blue: #2563eb;
+  --hospital-blue-light: #eff6ff;
+  --emergency-red: #ef4444;
+  --emergency-red-light: #fef2f2;
+  --safe-green: #10b981;
+  --safe-green-light: #ecfdf5;
+  --warning-yellow: #f59e0b;
+  --warning-yellow-light: #fffbeb;
+  --slate-dark: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all active:scale-95 shadow-lg shadow-blue-200;
+  }
+
+  .btn-emergency {
+    @apply bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all active:scale-95 shadow-lg shadow-red-200;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider;
+  }
+
+  .status-red {
+    @apply bg-red-100 text-red-700 border border-red-200;
+  }
+
+  .status-yellow {
+    @apply bg-yellow-100 text-yellow-700 border border-yellow-200;
+  }
+
+  .status-green {
+    @apply bg-green-100 text-green-700 border border-green-200;
+  }
+}
+
+/* Custom Utilities */
+.sidebar-link-active {
+  @apply bg-blue-50 text-blue-600 border-r-4 border-blue-600;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}

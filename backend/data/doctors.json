@@ -1,0 +1,56 @@
+[
+    {
+        "id": "D1",
+        "name": "Dr. Priya Sharma",
+        "department": "Cardiology",
+        "specialization": "Interventional Cardiology",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 5
+    },
+    {
+        "id": "D2",
+        "name": "Dr. Arjun Mehta",
+        "department": "General",
+        "specialization": "General Medicine",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 8
+    },
+    {
+        "id": "D3",
+        "name": "Dr. Sanjay Kumar",
+        "department": "Pulmonology",
+        "specialization": "Respiratory Medicine",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 4
+    },
+    {
+        "id": "D4",
+        "name": "Dr. Kavya Reddy",
+        "department": "Emergency",
+        "specialization": "Emergency Medicine",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 10
+    },
+    {
+        "id": "D5",
+        "name": "Dr. Rajesh Iyer",
+        "department": "General",
+        "specialization": "Family Medicine",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 8
+    },
+    {
+        "id": "D6",
+        "name": "Dr. Anjali Desai",
+        "department": "Dermatology",
+        "specialization": "Skin & Cosmetic",
+        "available": true,
+        "current_patients": 0,
+        "max_patients": 6
+    }
+]

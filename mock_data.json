@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "age": 45,
+        "gender": "Male",
+        "symptoms": "Severe chest pain",
+        "transcribed_text": "I have severe chest pain",
+        "priority_score": 80,
+        "triage_category": "red",
+        "status": "waiting",
+        "created_at": "2024-02-14 10:00:00"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "age": 28,
+        "gender": "Female",
+        "symptoms": "High fever",
+        "transcribed_text": "I have a fever and cough",
+        "priority_score": 40,
+        "triage_category": "yellow",
+        "status": "with_nurse",
+        "created_at": "2024-02-14 10:15:00"
+    },
+    {
+        "id": 3,
+        "name": "Bob Brown",
+        "age": 60,
+        "gender": "Male",
+        "symptoms": "Mild headache",
+        "transcribed_text": "I have a mild headache",
+        "priority_score": 10,
+        "triage_category": "green",
+        "status": "waiting",
+        "created_at": "2024-02-14 10:30:00"
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "patient_id": 1,
+        "age": 63,
+        "gender": "Male",
+        "blood_pressure_systolic": 155,
+        "blood_pressure_diastolic": 92,
+        "heart_rate": 105,
+        "temperature": 37.8,
+        "spo2": 93,
+        "symptom_chest_pain": true,
+        "symptom_breathing_difficulty": false,
+        "symptom_fever": false,
+        "heart_disease": true,
+        "diabetes": true,
+        "hypertension": true,
+        "smoker": true
+    },
+    {
+        "patient_id": 2,
+        "age": 29,
+        "gender": "Female",
+        "blood_pressure_systolic": 118,
+        "blood_pressure_diastolic": 76,
+        "heart_rate": 82,
+        "temperature": 39.7,
+        "spo2": 97,
+        "symptom_fever": true,
+        "symptom_cough": true,
+        "symptom_headache": true,
+        "pregnant": true
+    }
+]
