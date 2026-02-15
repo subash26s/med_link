@@ -1,0 +1,23 @@
+[
+    {
+        "id": "A1",
+        "provider": "City Ambulance Service",
+        "phone": "+919876540001",
+        "area": "default",
+        "available": true
+    },
+    {
+        "id": "A2",
+        "provider": "Emergency Medical Response",
+        "phone": "+919876540002",
+        "area": "default",
+        "available": true
+    },
+    {
+        "id": "A3",
+        "provider": "108 Ambulance",
+        "phone": "+91108",
+        "area": "default",
+        "available": true
+    }
+]

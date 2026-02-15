@@ -18,6 +18,7 @@ const PatientLayout = ({ children }) => {
         { name: t('dashboard'), icon: Home, path: '/patient/portal' },
         { name: t('myHealth') || t('vitals'), icon: Activity, path: '/patient/portal/health' },
         { name: t('appointments'), icon: Calendar, path: '/patient/portal/appointments' },
+        { name: t('notifications') || 'Notifications', icon: Bell, path: '/patient/portal/notifications' },
         { name: t('reports'), icon: FileText, path: '/patient/portal/reports' },
         { name: t('risk_assessment'), icon: ShieldCheck, path: '/patient/portal/ai-risk' },
         { name: t('doctors'), icon: Stethoscope, path: '/patient/portal/doctors' },

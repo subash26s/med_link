@@ -6,6 +6,9 @@ const triageController = require('../controllers/triageController');
 // POST /api/triage/analyze
 router.post('/analyze', triageController.analyzePatient);
 
+// POST /api/triage/assign
+router.post('/assign', triageController.assignPatient);
+
 // GET /api/triage/history (Optional)
 // router.get('/history', triageController.getTriageHistory);
 

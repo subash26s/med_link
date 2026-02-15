@@ -1,0 +1,18 @@
+[
+  {
+    "event_id": "EVT-1771103582031-rsde2hgio",
+    "patient_id": 1,
+    "patient_name": "Arun Kumar",
+    "risk_level": "LOW",
+    "urgency_score": 30,
+    "recommended_action": "Standard consultation",
+    "recommended_department": "General Medicine",
+    "vitals": {},
+    "symptoms": [
+      "chest pain",
+      " dizziness"
+    ],
+    "timestamp": "2026-02-14T21:13:02.031Z",
+    "status": "active"
+  }
+]

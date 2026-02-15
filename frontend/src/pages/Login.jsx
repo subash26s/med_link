@@ -156,7 +156,7 @@ const Login = () => {
                     >
                         {t('self_checkin')} <ChevronRight size={18} />
                     </button>
-                    <p className="mt-4 text-[9px] font-black text-slate-300 uppercase tracking-[0.3em]">© 2026 MediCare AI Systems</p>
+                    <p className="mt-4 text-[9px] font-black text-slate-300 uppercase tracking-[0.3em]">© 2026 MedHub+</p>
                 </div>
             </div>
         </div>

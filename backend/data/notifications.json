@@ -1,0 +1,45 @@
+[
+  {
+    "id": "NTF1771119675243_511",
+    "created_at": "2026-02-15T01:41:15.243Z",
+    "read": false,
+    "target_role": "doctor",
+    "target_id": "D1",
+    "type": "appointment_request",
+    "title": "New Appointment Request",
+    "message": "New appointment request received for 21/2/2026, 11:00:00 am.",
+    "meta": {
+      "appointment_id": "APT1771119675188",
+      "slot_time": "2026-02-21T05:30:00.000Z",
+      "patient_id": "P001"
+    }
+  },
+  {
+    "id": "NTF1771119489860_140",
+    "created_at": "2026-02-15T01:38:09.860Z",
+    "read": false,
+    "target_role": "patient",
+    "target_id": "P001",
+    "type": "appointment_confirmed",
+    "title": "Appointment Confirmed",
+    "message": "Dr. Dr. Priya Sharma has confirmed your appointment for 20/2/2026, 1:00:00 pm.",
+    "meta": {
+      "appointment_id": "APT1771110142339"
+    }
+  },
+  {
+    "id": "NTF1771116647339_845",
+    "created_at": "2026-02-15T00:50:47.339Z",
+    "read": false,
+    "target_role": "doctor",
+    "target_id": "D2",
+    "type": "appointment_request",
+    "title": "New Appointment Request",
+    "message": "New appointment request received for 16/2/2026, 12:30:00 pm.",
+    "meta": {
+      "appointment_id": "APT1771116647270",
+      "slot_time": "2026-02-16T07:00:00.000Z",
+      "patient_id": "P001"
+    }
+  }
+]

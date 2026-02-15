@@ -1,0 +1,251 @@
+[
+  {
+    "event_id": "EVT-1771103549900-59zh8e347",
+    "type": "call_nurse",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "message": "Patient requested nurse via Emergency Page",
+    "timestamp": "2026-02-14T21:12:29.900Z",
+    "status": "assigned",
+    "assigned_staff": "N1"
+  },
+  {
+    "event_id": "EVT-1771103555689-qe58bm03v",
+    "type": "call_ambulance",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "pickup_location": "Hospital Main Entrance",
+    "timestamp": "2026-02-14T21:12:35.689Z",
+    "status": "dispatched",
+    "ambulance_id": "A1"
+  },
+  {
+    "event_id": "EVT-1771103558494-b1bx1uhq7",
+    "type": "broadcast_sos",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "alert_level": "critical",
+    "note": "",
+    "timestamp": "2026-02-14T21:12:38.494Z",
+    "status": "broadcast",
+    "notified_contacts": [
+      {
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+      },
+      {
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+      },
+      {
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+      },
+      {
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+      }
+    ]
+  },
+  {
+    "event_id": "EVT-1771103572050-8gjf6rv71",
+    "type": "call_nurse",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "message": "Patient requested nurse via Emergency Page",
+    "timestamp": "2026-02-14T21:12:52.050Z",
+    "status": "assigned",
+    "assigned_staff": "N2"
+  },
+  {
+    "event_id": "EVT-1771103575073-8grxieu0u",
+    "type": "call_ambulance",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "pickup_location": "Hospital Main Entrance",
+    "timestamp": "2026-02-14T21:12:55.073Z",
+    "status": "dispatched",
+    "ambulance_id": "A1"
+  },
+  {
+    "event_id": "EVT-1771103576691-faxevhjvb",
+    "type": "call_ambulance",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "pickup_location": "Hospital Main Entrance",
+    "timestamp": "2026-02-14T21:12:56.691Z",
+    "status": "dispatched",
+    "ambulance_id": "A1"
+  },
+  {
+    "event_id": "EVT-1771103577965-f8nhh3qtn",
+    "type": "broadcast_sos",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "alert_level": "critical",
+    "note": "",
+    "timestamp": "2026-02-14T21:12:57.965Z",
+    "status": "broadcast",
+    "notified_contacts": [
+      {
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+      },
+      {
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+      },
+      {
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+      },
+      {
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+      }
+    ]
+  },
+  {
+    "event_id": "EVT-1771103582031-rsde2hgio",
+    "type": "triage_mode",
+    "patient_id": 1,
+    "risk_level": "LOW",
+    "urgency_score": 30,
+    "timestamp": "2026-02-14T21:13:02.031Z",
+    "status": "completed"
+  },
+  {
+    "event_id": "EVT-1771105639037-5q9qoupjm",
+    "type": "call_ambulance",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "pickup_location": "Hospital Main Entrance",
+    "timestamp": "2026-02-14T21:47:19.037Z",
+    "status": "dispatched",
+    "ambulance_id": "A1"
+  },
+  {
+    "event_id": "EVT-1771105652992-oxsvvmw5a",
+    "type": "broadcast_sos",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "alert_level": "critical",
+    "note": "",
+    "timestamp": "2026-02-14T21:47:32.992Z",
+    "status": "broadcast",
+    "notified_contacts": [
+      {
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+      },
+      {
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+      },
+      {
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+      },
+      {
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+      }
+    ]
+  },
+  {
+    "event_id": "EVT-1771115865856-53gk0lji0",
+    "type": "call_ambulance",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "pickup_location": "Hospital Main Entrance",
+    "timestamp": "2026-02-15T00:37:45.856Z",
+    "status": "dispatched",
+    "ambulance_id": "A1"
+  },
+  {
+    "event_id": "EVT-1771115867265-polwnwu5m",
+    "type": "broadcast_sos",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "alert_level": "critical",
+    "note": "",
+    "timestamp": "2026-02-15T00:37:47.265Z",
+    "status": "broadcast",
+    "notified_contacts": [
+      {
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+      },
+      {
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+      },
+      {
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+      },
+      {
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+      }
+    ]
+  },
+  {
+    "event_id": "EVT-1771119624245-cleamj0a2",
+    "type": "broadcast_sos",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "alert_level": "critical",
+    "note": "",
+    "timestamp": "2026-02-15T01:40:24.245Z",
+    "status": "broadcast",
+    "notified_contacts": [
+      {
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+      },
+      {
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+      },
+      {
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+      },
+      {
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+      }
+    ]
+  },
+  {
+    "event_id": "EVT-1771119683642-vmndj99wo",
+    "type": "call_nurse",
+    "patient_id": 1,
+    "hospital_clinic_id": "H001",
+    "message": "Patient requested nurse via Emergency Page",
+    "timestamp": "2026-02-15T01:41:23.642Z",
+    "status": "assigned",
+    "assigned_staff": "N3"
+  }
+]

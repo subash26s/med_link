@@ -1,0 +1,178 @@
+[
+  {
+    "reminder_id": "REM-1771108508701-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771108508696",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 12:30 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-19T07:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:35:08.824Z"
+  },
+  {
+    "reminder_id": "REM-1771108508824-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771108508696",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-20T05:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:35:08.824Z"
+  },
+  {
+    "reminder_id": "REM-1771109637974-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771109637960",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 12:30 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-15T07:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:53:58.104Z"
+  },
+  {
+    "reminder_id": "REM-1771109638104-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771109637960",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-16T05:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:53:58.104Z"
+  },
+  {
+    "reminder_id": "REM-1771109681277-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771109681272",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 05:00 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-21T11:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:54:41.304Z"
+  },
+  {
+    "reminder_id": "REM-1771109681304-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771109681272",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-22T09:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T22:54:41.304Z"
+  },
+  {
+    "reminder_id": "REM-1771110142346-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771110142339",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 01:00 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-19T07:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T23:02:22.428Z"
+  },
+  {
+    "reminder_id": "REM-1771110142428-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771110142339",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-20T05:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-14T23:02:22.428Z"
+  },
+  {
+    "reminder_id": "REM-1771115854354-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771115854347",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 11:00 am. Reply STOP to opt out.",
+    "send_at": "2026-02-17T05:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:37:34.458Z"
+  },
+  {
+    "reminder_id": "REM-1771115854458-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771115854347",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-18T03:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:37:34.458Z"
+  },
+  {
+    "reminder_id": "REM-1771115888069-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771115888060",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 02:30 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-19T09:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:38:08.115Z"
+  },
+  {
+    "reminder_id": "REM-1771115888115-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771115888060",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-20T07:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:38:08.115Z"
+  },
+  {
+    "reminder_id": "REM-1771116647278-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771116647270",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 12:30 pm. Reply STOP to opt out.",
+    "send_at": "2026-02-15T07:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:50:47.315Z"
+  },
+  {
+    "reminder_id": "REM-1771116647315-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771116647270",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-16T05:00:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T00:50:47.315Z"
+  },
+  {
+    "reminder_id": "REM-1771119675194-24h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771119675188",
+    "message": "MedHub+: Reminder—You have an appointment tomorrow at 11:00 am. Reply STOP to opt out.",
+    "send_at": "2026-02-20T05:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T01:41:15.222Z"
+  },
+  {
+    "reminder_id": "REM-1771119675223-2h",
+    "type": "appointment",
+    "patient_id": "P001",
+    "phone": "+1234567890",
+    "appointment_id": "APT1771119675188",
+    "message": "MedHub+: Appointment in 2 hours. Please arrive 10 mins early.",
+    "send_at": "2026-02-21T03:30:00.000Z",
+    "status": "scheduled",
+    "created_at": "2026-02-15T01:41:15.223Z"
+  }
+]

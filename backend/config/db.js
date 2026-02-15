@@ -238,4 +238,4 @@ const seedDB = async () => {
   }
 }
 
-module.exports = { pool, initDB };
+module.exports = { pool, initDB, db };

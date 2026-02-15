@@ -1,0 +1,26 @@
+[
+    {
+        "id": "E1",
+        "type": "hospital_security",
+        "name": "Hospital Security",
+        "phone": "+919876550001"
+    },
+    {
+        "id": "E2",
+        "type": "front_desk",
+        "name": "Front Desk",
+        "phone": "+919876550002"
+    },
+    {
+        "id": "E3",
+        "type": "emergency_response",
+        "name": "Emergency Response Team",
+        "phone": "+919876550003"
+    },
+    {
+        "id": "E4",
+        "type": "family_contact",
+        "name": "Family Emergency Contact",
+        "phone": "+919876550004"
+    }
+]

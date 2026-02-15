@@ -7,7 +7,9 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useTheme } from '../contexts/ThemeContext';
 import LanguageSwitcher from '../components/common/LanguageSwitcher';
+import ProfileDropdown from '../components/common/ProfileDropdown';
 
 const Sidebar = ({ isOpen, toggle }) => {
     const location = useLocation();
@@ -74,6 +76,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 const Header = ({ toggleSidebar }) => {
     const { logout, user } = useAuth();
     const { t } = useLanguage();
+    const { theme, toggleTheme } = useTheme();
     const navigate = useNavigate();
 
     return (
@@ -95,24 +98,18 @@ const Header = ({ toggleSidebar }) => {
             <div className="flex items-center gap-2 md:gap-5">
                 <LanguageSwitcher />
                 <div className="flex items-center gap-1 md:gap-2">
-                    <button className="p-2.5 text-slate-500 hover:bg-slate-50 rounded-xl transition-all relative">
-                        <Bell size={20} />
-                        <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                    <button className="p-2.5 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-xl transition-all relative">
+                        <Bell size={20} className="dark:text-slate-400" />
+                        <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-800"></span>
                     </button>
-                    <button className="p-2.5 text-slate-500 hover:bg-slate-50 rounded-xl transition-all">
-                        <Moon size={20} />
+                    <button onClick={toggleTheme} className="p-2.5 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-xl transition-all">
+                        {theme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
                     </button>
                 </div>
 
-                <div className="h-10 w-px bg-slate-100 mx-1 md:mx-2"></div>
+                <div className="h-10 w-px bg-slate-100 dark:bg-slate-700 mx-1 md:mx-2"></div>
 
-                <button
-                    onClick={() => { logout(); navigate('/login'); }}
-                    className="flex items-center gap-2 text-red-500 font-bold hover:bg-red-50 px-4 py-2.5 rounded-xl transition-all"
-                >
-                    <LogOut size={18} />
-                    <span className="hidden md:inline">{t('logout')}</span>
-                </button>
+                <ProfileDropdown />
             </div>
         </header>
     );

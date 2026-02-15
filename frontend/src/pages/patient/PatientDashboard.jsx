@@ -6,7 +6,7 @@ import {
     ArrowRight, ShieldCheck, Stethoscope,
     Calendar, Brain, ShieldAlert, ChevronRight,
     TrendingUp, AlertTriangle, User, Info,
-    Bell, CheckCircle
+    Bell, CheckCircle, Pill
 } from 'lucide-react';
 import PatientLayout from '../../layouts/PatientLayout';
 import { useAuth } from '../../contexts/AuthContext';
@@ -203,6 +203,47 @@ const PatientDashboard = () => {
                             <button className="w-full py-4 rounded-2xl border-2 border-slate-50 text-slate-400 font-black text-[10px] uppercase tracking-widest hover:bg-slate-50 transition-all">
                                 {t('reports')}
                             </button>
+                        </div>
+
+                        {/* Medication Reminders Card */}
+                        <div className="bg-white rounded-[40px] p-8 border border-slate-100 shadow-sm">
+                            <h4 className="text-lg font-black text-slate-900 mb-6 flex items-center gap-2">
+                                <Pill size={20} className="text-emerald-600" /> {t('medication') || "Medication"}
+                            </h4>
+                            <div className="space-y-4">
+                                <input
+                                    type="text"
+                                    placeholder="Enter medication name..."
+                                    className="w-full bg-slate-50 p-4 rounded-2xl font-bold text-sm outline-none focus:ring-2 ring-emerald-100"
+                                    id="medicationInput"
+                                />
+                                <button
+                                    onClick={async () => {
+                                        const input = document.getElementById('medicationInput');
+                                        if (!input.value) return alert("Please enter medication name");
+                                        try {
+                                            const res = await axios.post('/api/sms/medications/reminder', {
+                                                patient_id: patientData?.id || 'P001',
+                                                phone: '+919360733882',
+                                                medication_name: input.value,
+                                                dosage: '1 tab',
+                                                times: ["09:00", "20:00"],
+                                                start_date: new Date().toISOString()
+                                            });
+                                            if (res.data.success) {
+                                                alert(`✅ Reminders Scheduled!\n${res.data.count} SMS logs created in Demo Mode.`);
+                                                input.value = "";
+                                            }
+                                        } catch (err) {
+                                            console.error(err);
+                                            alert("Failed to schedule reminders");
+                                        }
+                                    }}
+                                    className="w-full bg-emerald-600 text-white py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-100"
+                                >
+                                    Set Daily Reminder
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "SMS1771119675233_893",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Priya Sharma for 21/2/2026, 11:00:00 am. Pending confirmation.",
+    "scheduled_for": "2026-02-21T03:30:00.000Z",
+    "sent_at": "2026-02-15T01:41:15.233Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771119675188"
+    }
+  },
+  {
+    "id": "SMS1771119489854_657",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment with Dr. Priya Sharma on 20/2/2026, 1:00:00 pm is CONFIRMED.",
+    "scheduled_for": "2026-02-15T01:38:09.851Z",
+    "sent_at": "2026-02-15T01:38:09.854Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {}
+  },
+  {
+    "id": "SMS1771116647335_695",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Arjun Mehta for 16/2/2026, 12:30:00 pm. Pending confirmation.",
+    "scheduled_for": "2026-02-16T05:00:00.000Z",
+    "sent_at": "2026-02-15T00:50:47.335Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771116647270"
+    }
+  },
+  {
+    "id": "SMS1771115888132_383",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Arjun Mehta for 20/2/2026, 2:30:00 pm. Pending confirmation.",
+    "scheduled_for": "2026-02-20T07:00:00.000Z",
+    "sent_at": "2026-02-15T00:38:08.132Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771115888060"
+    }
+  },
+  {
+    "id": "SMS1771115854486_573",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Priya Sharma for 18/2/2026, 11:00:00 am. Pending confirmation.",
+    "scheduled_for": "2026-02-18T03:30:00.000Z",
+    "sent_at": "2026-02-15T00:37:34.486Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771115854347"
+    }
+  },
+  {
+    "id": "SMS1771110142434_576",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Priya Sharma for 20/2/2026, 1:00:00 pm. Pending confirmation.",
+    "scheduled_for": "2026-02-20T05:30:00.000Z",
+    "sent_at": "2026-02-14T23:02:22.434Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771110142339"
+    }
+  },
+  {
+    "id": "SMS1771109681309_268",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment request sent to Dr. Arjun Mehta for 22/2/2026, 5:00:00 pm. Pending confirmation.",
+    "scheduled_for": "2026-02-22T09:30:00.000Z",
+    "sent_at": "2026-02-14T22:54:41.309Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771109681272"
+    }
+  },
+  {
+    "id": "SMS1771109638114_689",
+    "to": "+919360733882",
+    "patient_id": "P001",
+    "type": "appointment",
+    "message": "MedHub+: Appointment confirmed with Dr. Priya Sharma on 16/2/2026, 12:30:00 pm. Please arrive 10 minutes early.",
+    "scheduled_for": "2026-02-16T05:00:00.000Z",
+    "sent_at": "2026-02-14T22:53:58.114Z",
+    "status": "sent",
+    "provider": "demo",
+    "meta": {
+      "appointment_id": "APT1771109637960"
+    }
+  }
+]

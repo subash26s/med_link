@@ -34,6 +34,13 @@ export const AuthProvider = ({ children }) => {
             const res = await axios.post('/auth/login', { username, password, role });
             if (res.data.auth) {
                 const userData = { username: res.data.username, role: res.data.role, name: res.data.name };
+
+                // DEMO FIX: Hardcode Doctor ID to D1 for demo flow
+                if (res.data.role === 'doctor') {
+                    userData.doctor_id = 'D1';
+                    localStorage.setItem('doctor_id', 'D1');
+                }
+
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', JSON.stringify(userData));
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
@@ -51,6 +58,10 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        localStorage.removeItem('role');
+        localStorage.removeItem('patient_id');
+        localStorage.removeItem('doctor_id');
+        localStorage.removeItem('admin_id');
         delete axios.defaults.headers.common['Authorization'];
         setUser(null);
     };

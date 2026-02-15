@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { analyzePatientRisk } = require('./backend/ai/riskModel');
 
 const indianMaleNames = ['Rahul', 'Amit', 'Rajesh', 'Vikram', 'Sanjay', 'Arjun', 'Vijay', 'Sandeep', 'Anil', 'Manoj', 'Ravi', 'Deepak', 'Alok', 'Sunil', 'Kishore', 'Mohan', 'Aditya', 'Suresh', 'Ramesh', 'Kartik', 'Vivek', 'Prateek', 'Sameer', 'Nitin', 'Varun'];
 const indianFemaleNames = ['Priya', 'Sunita', 'Lakshmi', 'Anjali', 'Kavita', 'Meena', 'Deepika', 'Sneha', 'Shweta', 'Pooja', 'Neha', 'Ritu', 'Anita', 'Swati', 'Geeta', 'Radha', 'Ishani', 'Divya', 'Komal', 'Maya', 'Nisha', 'Asha', 'Jyoti', 'Preeti', 'Sonia'];
@@ -33,6 +34,51 @@ const generateData = () => {
         const age = getRandomInt(18, 85);
         const doctorObj = getRandom(doctors);
 
+        const vitals = {
+            blood_pressure_systolic: getRandomInt(110, 170),
+            blood_pressure_diastolic: getRandomInt(70, 110),
+            heart_rate: getRandomInt(60, 120),
+            temperature: (getRandomInt(970, 1020) / 10).toFixed(1),
+            spo2: getRandomInt(88, 100),
+            pain_level: getRandomInt(0, 10)
+        };
+
+        const symptoms = {
+            chest_pain: Math.random() > 0.8,
+            fever: Math.random() > 0.7,
+            cough: Math.random() > 0.6,
+            breathing_difficulty: Math.random() > 0.8,
+            headache: Math.random() > 0.5,
+            dizziness: Math.random() > 0.7,
+            vomiting: Math.random() > 0.8
+        };
+
+        const conditions = {
+            diabetes: Math.random() > 0.7,
+            hypertension: Math.random() > 0.7,
+            heart_disease: Math.random() > 0.8,
+            asthma: Math.random() > 0.8,
+            pregnant: gender === 'Female' && age < 45 && Math.random() > 0.9,
+            smoker: Math.random() > 0.8
+        };
+
+        // Prepare data for AI analysis
+        const analysisInput = {
+            age,
+            ...vitals,
+            ...symptoms,
+            ...conditions
+        };
+
+        const riskAnalysis = analyzePatientRisk(analysisInput);
+
+        // Map risk level to color category
+        let category = 'Green';
+        if (riskAnalysis.risk_level === 'Critical') category = 'Red';
+        else if (riskAnalysis.risk_level === 'High') category = 'Orange';
+        else if (riskAnalysis.risk_level === 'Medium') category = 'Yellow';
+
+
         patients.push({
             patient_id,
             name,
@@ -41,32 +87,17 @@ const generateData = () => {
             blood_group: getRandom(bloodGroups),
             phone: `9${getRandomInt(100000000, 999999999)}`,
             email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${i}@email.com`,
-            vitals: {
-                blood_pressure_systolic: getRandomInt(110, 170),
-                blood_pressure_diastolic: getRandomInt(70, 110),
-                heart_rate: getRandomInt(60, 120),
-                temperature: (getRandomInt(970, 1020) / 10).toFixed(1),
-                spo2: getRandomInt(88, 100),
-                pain_level: getRandomInt(0, 10)
-            },
-            symptoms: {
-                chest_pain: Math.random() > 0.8,
-                fever: Math.random() > 0.7,
-                cough: Math.random() > 0.6,
-                breathing_difficulty: Math.random() > 0.8,
-                headache: Math.random() > 0.5,
-                dizziness: Math.random() > 0.7,
-                vomiting: Math.random() > 0.8
-            },
-            conditions: {
-                diabetes: Math.random() > 0.7,
-                hypertension: Math.random() > 0.7,
-                heart_disease: Math.random() > 0.8,
-                asthma: Math.random() > 0.8,
-                pregnant: gender === 'Female' && age < 45 && Math.random() > 0.9,
-                smoker: Math.random() > 0.8
-            },
-            risk_level: getRandom(['Low', 'Medium', 'High']),
+            vitals,
+            symptoms,
+            conditions,
+
+            // AI Generated Fields
+            risk_level: riskAnalysis.risk_level,
+            emergency_score: riskAnalysis.emergency_score,
+            triage_category: category,
+            recommended_action: riskAnalysis.nurse_actions[0],
+            ai_summary: riskAnalysis.ai_summary,
+
             doctor_assigned: doctorObj.name,
             department: doctorObj.dept,
             hospital_clinic_id: 'H001',
@@ -126,7 +157,7 @@ const generateData = () => {
 
     const fullData = { patients, appointments, reports, vitals_history };
     fs.writeFileSync('demo_data.json', JSON.stringify(fullData, null, 2));
-    console.log('Successfully generated demo_data.json');
+    console.log('Successfully generated demo_data.json with AI integration');
 };
 
 generateData();

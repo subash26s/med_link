@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, UserPlus, LogOut, Settings } from 'lucide-react';
+import { LayoutDashboard, Users, UserPlus, LogOut, Settings, Calendar, FileText, Bell, Activity, ClipboardList } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 const Sidebar = () => {
@@ -17,7 +17,13 @@ const Sidebar = () => {
 
     const links = [
         { path: '/nurse', label: 'Nurse Dashboard', icon: LayoutDashboard, roles: ['nurse', 'admin'] },
-        { path: '/doctor', label: 'Doctor Dashboard', icon: UserPlus, roles: ['doctor', 'admin'] }, // Wait, UserPlus? Maybe Activity/Stethoscope
+        { path: '/doctor', label: 'Dashboard', icon: LayoutDashboard, roles: ['doctor', 'admin'] },
+        { path: '/triage-queue', label: 'Public Triage Queue', icon: Activity, roles: ['doctor', 'nurse', 'admin'] },
+        { path: '/doctor/appointments', label: 'Patient Appointments', icon: Calendar, roles: ['doctor'] },
+        { path: '/doctor/schedule', label: 'My Schedule', icon: ClipboardList, roles: ['doctor'] },
+        { path: '/doctor/reports', label: 'Reports', icon: FileText, roles: ['doctor'] },
+        { path: '/patient/portal/notifications', label: 'Notifications', icon: Bell, roles: ['doctor', 'patient', 'admin'] },
+        { path: '/profile', label: 'Settings', icon: Settings, roles: ['doctor', 'nurse', 'admin', 'patient'] },
         { path: '/admin', label: 'Admin Panel', icon: Settings, roles: ['admin'] },
     ];
 

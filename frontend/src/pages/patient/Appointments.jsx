@@ -15,26 +15,44 @@ const Appointments = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Mocking appointments based on the dummy data requirements
-        setAppointments([
-            {
-                doctor: 'Dr. Arjun Mehta',
-                dept: 'Cardiology',
-                type: 'Routine Follow-up',
-                last_visit: '2026-01-15',
-                next_visit: '2026-02-26',
-                status: 'Confirmed'
-            },
-            {
-                doctor: 'Dr. Priya Sharma',
-                dept: 'General Medicine',
-                type: 'Annual Wellness',
-                last_visit: '2025-12-01',
-                next_visit: '2026-06-01',
-                status: 'Scheduled'
+        const fetchAppointments = async () => {
+            try {
+                // Using P001 as requested
+                const res = await axios.get('/api/appointments?patient_id=P001');
+                if (res.data.success) {
+                    const mapped = res.data.appointments.map(a => ({
+                        doctor: a.doctor_name,
+                        dept: a.doctor_dept || 'General',
+                        type: 'Consultation',
+                        last_visit: 'New',
+                        next_visit: new Date(a.slot_time).toLocaleDateString(),
+                        status: a.status.charAt(0).toUpperCase() + a.status.slice(1)
+                    }));
+
+                    // Allow mixed mock data if needed using ...prev? No, replacing for now.
+                    if (mapped.length > 0) {
+                        setAppointments(mapped);
+                    } else {
+                        // Default mocks if empty for demo
+                        setAppointments([
+                            {
+                                doctor: 'Dr. Arjun Mehta',
+                                dept: 'Cardiology',
+                                type: 'Routine Follow-up',
+                                last_visit: '2026-01-15',
+                                next_visit: '2026-02-26',
+                                status: 'Confirmed'
+                            }
+                        ]);
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setLoading(false);
             }
-        ]);
-        setLoading(false);
+        };
+        fetchAppointments();
     }, []);
 
     return (
@@ -132,7 +150,9 @@ const Appointments = () => {
                             <td className="px-6 py-6 text-slate-400 font-medium text-xs font-mono">{apt.last_visit}</td>
                             <td className="px-6 py-6 text-slate-900 font-black text-xs font-mono">{apt.next_visit}</td>
                             <td className="px-6 py-6">
-                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${apt.status === 'Confirmed' ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-blue-50 text-blue-600 border border-blue-100'
+                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border ${apt.status === 'Confirmed' || apt.status === 'Booked' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' :
+                                        apt.status === 'Pending' ? 'bg-amber-50 text-amber-600 border-amber-100' :
+                                            'bg-blue-50 text-blue-600 border-blue-100'
                                     }`}>
                                     {apt.status}
                                 </span>

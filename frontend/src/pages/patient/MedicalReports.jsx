@@ -37,7 +37,7 @@ const MedicalReports = () => {
                     </div>
                     <div className="relative z-10 flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="text-[10px] font-black text-blue-200 uppercase tracking-widest">MediCare AI Intelligence</span>
+                            <span className="text-[10px] font-black text-blue-200 uppercase tracking-widest">MedHub+ Intelligence</span>
                         </div>
                         <p className="text-white font-bold text-lg leading-tight md:max-w-xl">
                             "I've analyzed your CBC from Feb 12. Your hemoglobin is 11.2 g/dL. No immediate alarm, but we recommend increasing dietary iron."

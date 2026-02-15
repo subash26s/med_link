@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
     Stethoscope, Clock, Heart, Brain,
     Droplets, Zap, ChevronRight, Star,
@@ -7,14 +8,57 @@ import {
 import PatientLayout from '../../layouts/PatientLayout';
 import { PrimaryButton } from '../../components/common/UIComponents';
 
+import { useAuth } from '../../contexts/AuthContext';
+
 const DoctorsList = () => {
+    const { user } = useAuth();
+
+    // Matches backend/data/doctors.json
     const doctors = [
-        { name: 'Dr. Rajesh Mehta', dept: 'Cardiology', availability: 'Available Today', rating: 4.9, icon: Heart, color: 'text-red-500', bg: 'bg-red-50' },
-        { name: 'Dr. Priya Sharma', dept: 'General Medicine', availability: 'Available Tomorrow', rating: 4.8, icon: Stethoscope, color: 'text-blue-500', bg: 'bg-blue-50' },
-        { name: 'Dr. Ahmed Khan', dept: 'Emergency Medicine', availability: 'On Duty', rating: 5.0, icon: Zap, color: 'text-amber-500', bg: 'bg-amber-50' },
-        { name: 'Dr. Meena Iyer', dept: 'Neurology', availability: 'Available Monday', rating: 4.7, icon: Brain, color: 'text-purple-500', bg: 'bg-purple-50' },
-        { name: 'Dr. Arjun Mehta', dept: 'Pulmonology', availability: 'Available Today', rating: 4.9, icon: Droplets, color: 'text-emerald-500', bg: 'bg-emerald-50' },
+        { id: 'D1', name: 'Dr. Priya Sharma', dept: 'Cardiology', availability: 'Available Today', rating: 4.9, icon: Heart, color: 'text-red-500', bg: 'bg-red-50' },
+        { id: 'D2', name: 'Dr. Arjun Mehta', dept: 'General Medicine', availability: 'Available Tomorrow', rating: 4.8, icon: Stethoscope, color: 'text-blue-500', bg: 'bg-blue-50' },
+        { id: 'D4', name: 'Dr. Kavya Reddy', dept: 'Emergency Medicine', availability: 'On Duty', rating: 5.0, icon: Zap, color: 'text-amber-500', bg: 'bg-amber-50' },
+        { id: 'D6', name: 'Dr. Anjali Desai', dept: 'Dermatology', availability: 'Available Monday', rating: 4.7, icon: Brain, color: 'text-purple-500', bg: 'bg-purple-50' },
+        { id: 'D3', name: 'Dr. Sanjay Kumar', dept: 'Pulmonology', availability: 'Available Today', rating: 4.9, icon: Droplets, color: 'text-emerald-500', bg: 'bg-emerald-50' },
     ];
+
+    const handleBook = async (doc) => {
+        try {
+            // Generate a random slot in the next 7 days for demo
+            const slot = new Date();
+            slot.setDate(slot.getDate() + Math.floor(Math.random() * 7) + 1); // 1-7 days ahead
+            slot.setHours(9 + Math.floor(Math.random() * 9), 0, 0, 0); // 9 AM - 5 PM
+            if (Math.random() > 0.5) slot.setMinutes(30); // 0 or 30 mins
+
+            const slotISO = slot.toISOString();
+            console.log("Booking Slot (Frontend):", slotISO);
+
+            const API_BASE = "http://localhost:5000";
+            const res = await axios.post(`${API_BASE}/api/appointments/book`, {
+                patient_id: user?.id || 'P001',
+                doctor_id: doc.id,
+                slot_time: slotISO,
+                branch: 'Main Branch'
+            });
+
+            if (res.data.success) {
+                // Log activity
+                const activity = JSON.parse(localStorage.getItem('activity_log') || '[]');
+                activity.unshift({
+                    time: new Date().toISOString(),
+                    action: 'Appointment Booked',
+                    details: `Booked appointment with Dr. ${doc.name}`
+                });
+                localStorage.setItem('activity_log', JSON.stringify(activity));
+
+                alert(`Appointment request sent! \n\nWaiting for Doctor Confirmation.\n\nYou will get an SMS when approved.`);
+            }
+        } catch (error) {
+            console.error("Booking Error:", error);
+            const msg = error.response?.data?.message || error.message || 'Booking failed. The slot might be taken.';
+            alert(`Booking Failed: ${msg}`);
+        }
+    };
 
     return (
         <PatientLayout>
@@ -68,7 +112,10 @@ const DoctorsList = () => {
                                 </div>
                             </div>
 
-                            <button className="w-full bg-slate-900 text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 group-hover:bg-blue-600 transition-all">
+                            <button
+                                onClick={() => handleBook(doc)}
+                                className="w-full bg-slate-900 text-white py-4 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 group-hover:bg-blue-600 transition-all active:scale-95"
+                            >
                                 Book Consultation <ChevronRight size={16} />
                             </button>
                         </div>

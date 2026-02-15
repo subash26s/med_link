@@ -72,3 +72,32 @@ exports.getTriageHistory = async (req, res) => {
     // Placeholder to fetch past analyses if stored in a separate table
     res.json({ message: "Not implemented for MVP" });
 };
+
+exports.assignPatient = async (req, res) => {
+    try {
+        const { patient_id, doctor_id } = req.body;
+
+        // Handle VT-XXXX format or simple ID
+        let dbId = patient_id;
+        if (typeof patient_id === 'string' && patient_id.startsWith('VT-')) {
+            dbId = parseInt(patient_id.split('-')[1]);
+        }
+
+        // Get Doctor Name (Mock lookup or from request if needed, otherwise just ID)
+        // For simplicity, we just update the doctor column with ID or Name if available
+        // Ideally we should lookup doctor name from users table
+
+        const [users] = await pool.query("SELECT name FROM users WHERE id = ? OR name = ?", [doctor_id, doctor_id]);
+        const doctorName = users[0]?.name || doctor_id;
+
+        await pool.query(
+            "UPDATE patients SET doctor = ?, status = 'with_doctor' WHERE id = ? OR patient_id = ?",
+            [doctorName, dbId, patient_id]
+        );
+
+        res.json({ success: true, message: "Patient assigned successfully" });
+    } catch (error) {
+        console.error("Assign Error:", error);
+        res.status(500).json({ success: false, message: "Database Error" });
+    }
+};

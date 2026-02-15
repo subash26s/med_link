@@ -1,0 +1,52 @@
+[
+  {
+    "id": "N1",
+    "name": "Nurse Anitha",
+    "role": "nurse",
+    "phone": "+919876543201",
+    "available": false,
+    "hospital_clinic_id": "H001"
+  },
+  {
+    "id": "N2",
+    "name": "Nurse Ravi",
+    "role": "nurse",
+    "phone": "+919876543202",
+    "available": false,
+    "hospital_clinic_id": "H001"
+  },
+  {
+    "id": "N3",
+    "name": "Nurse Priya",
+    "role": "nurse",
+    "phone": "+919876543203",
+    "available": false,
+    "hospital_clinic_id": "H001"
+  },
+  {
+    "id": "N4",
+    "name": "Nurse Kumar",
+    "role": "nurse",
+    "phone": "+919876543204",
+    "available": true,
+    "hospital_clinic_id": "H002"
+  },
+  {
+    "id": "D1",
+    "name": "Dr. Arjun",
+    "role": "doctor",
+    "phone": "+919876543301",
+    "available": true,
+    "hospital_clinic_id": "H001",
+    "department": "General Medicine"
+  },
+  {
+    "id": "D2",
+    "name": "Dr. Meena",
+    "role": "doctor",
+    "phone": "+919876543302",
+    "available": true,
+    "hospital_clinic_id": "H001",
+    "department": "Cardiology"
+  }
+]
